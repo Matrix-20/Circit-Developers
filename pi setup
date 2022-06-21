@@ -1,0 +1,26 @@
+sudo apt update
+sudo apt upgrade
+
+git clone https://github.com/dora-lee/seneca-prg550-2022-spring.git
+mv ~/.profile ~/.profile.orig
+mv ~/.bashrc ~/.bashrc.orig
+cp ~/seneca-prg550-2022-spring/pi_homedir/.bashrc ~/.bashrc
+cp ~/seneca-prg550-2022-spring/pi_homedir/.profile ~/.profile
+sudo apt install neofetch
+sudo apt install bsdmainutils
+mkdir software
+cd /software
+mkdir src
+cd src
+curl -O https://www.python.org/ftp/python/3.9.9/Python-3.9.9.tgz
+sudo apt install libbz2-dev -y \ libgdbm-dev -y \ libsqlite3-dev -y \ libssl-dev -y \ libreadline6-dev -y \ liblzma-dev -y \ zlib1g-dev -y tk-dev -y \ libgdbm-dev -y \ libffi-dev -y \ libncurses5-dev -y 
+tar -xzf Python-3.9.9.tgz
+cd Python-3.9.9
+sh configure --prefix=/home/pi/software
+make
+make install
+cd
+. .profile
+python3 -V
+whereis python3
+which python3
